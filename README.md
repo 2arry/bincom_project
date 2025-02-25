@@ -15,7 +15,7 @@ This repository contains various Python scripts for different tasks.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/bincom_project.git
+   git clone https://github.com/2arry/bincom_project.git
    cd bincom_project
    ```
 
