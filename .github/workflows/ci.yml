@@ -1,8 +1,8 @@
-name:ci
+name: ci
 on:
   push:
     branches:
-      -master
+      - master
       - main
   permissions:
     contents: write
@@ -10,13 +10,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - users: actions/checkout@v3
-    - users: actions/setup-python@v4
-      with:
-        python-version: 3.
-    - users: actions/cache@v2
-      with:
-        key: ${{github.ref}}
-        path: .cache
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
       - run: pip install mkdocs-material
-    - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force
